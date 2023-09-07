@@ -13,6 +13,23 @@
   line-height: 26px;
 }
 
+.imagen-encabezado {
+  width: 300px;
+}
+
+.container-perfil { /* Ancho del contenedor */
+  margin: auto; /* Margen automÃ¡tico a la izquierda y la derecha para centrar horizontalmente */
+  text-align: center;
+  
+}
+
+.imagen-perfil {
+  width: 200px;
+  margin: auto;
+}
+
+
+
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -24,4 +41,9 @@
 
 #container a {
   text-decoration: none;
+}
+
+.contenedor-header{
+  display: flex;
+  justify-content: space-between;
 }

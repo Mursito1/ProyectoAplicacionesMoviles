@@ -15,19 +15,12 @@
         <button mat-menu-item>Soporte</button>
         <button mat-menu-item>Salir</button>
       </mat-menu>
-      
 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  
-  </ion-header>
   
   <div class="container-perfil">
   <br>
@@ -41,7 +34,7 @@
 
 
       </mat-card-header>
-        <mat-form-field>
+        <mat-form-field panelClass="dropdown-panel">
           <mat-label>ASIGNATURA</mat-label>
           <mat-select>
             <mat-option value="0">PROGRAMACION DE APLICACIONES MOVILES</mat-option>
@@ -55,7 +48,7 @@
          
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field panelClass="dropdown-panel">
           <mat-label>SECCION</mat-label>
           <mat-select>
             <mat-option value="0">001D</mat-option>
@@ -70,9 +63,9 @@
 
   </mat-card>
   <br>
-  <mat-card style="width: 31.2%; margin: auto;">
-    <div>
-      <ion-button (click)="mostrarSpinner()">Marcar presente</ion-button>
-    </div>
-  </mat-card>
+<div style="text-align: center;">
+  <ion-button (click)="mostrarSpinner()">Marcar presente</ion-button>
+</div>
+      
+
 </ion-content> 

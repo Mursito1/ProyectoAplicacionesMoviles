@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  styleUrls: ['./login.page.scss']
 })
 export class LoginPage {
-  email: string = ''; // Campo de entrada de correo electrónico
-  password: string = '';
+  user = {
+  usuario:"",
+  password:""
+    }
 
   constructor(private router: Router) {}
 
   login() {
-    // ... Tu código de autenticación ...
-  
-    // Guarda el correo electrónico en localStorage
-    localStorage.setItem('email', this.email);
-    console.log(this.email); // Agrega esta línea para verificar el valor
-    // Redirige a la página de inicio
-    this.router.navigate(['/home']);
+  let navigationExtras: NavigationExtras = {
+    state: {user: this.user}
+  };
+  this.router.navigate(['/home'], navigationExtras);
   }
 }

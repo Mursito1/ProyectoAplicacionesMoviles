@@ -26,7 +26,7 @@
   <br>
   <ion-img class="imagen-perfil" src="../../assets/profile.png"></ion-img>
   <br>
-  <h1>Bienvenido usuario: {{ email }}</h1>
+  <h1>Bienvenido usuario: {{ user.usuario }}</h1>
 </div>
   <mat-card style="width: 80%; margin: auto; padding: 20px;">
       <mat-card-header>
@@ -63,9 +63,5 @@
 
   </mat-card>
   <br>
-<div style="text-align: center;">
-  <ion-button (click)="mostrarSpinner()">Marcar presente</ion-button>
-</div>
-      
 
 </ion-content> 

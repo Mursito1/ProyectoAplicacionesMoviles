@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { AuthService } from 'src/app/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,21 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class LoginPage {
   user = {
-  usuario:"",
-  password:""
-    }
+    usuario: "",
+    password: ""
+  };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   login() {
-  let navigationExtras: NavigationExtras = {
-    state: {user: this.user}
-  };
-  this.router.navigate(['/home'], navigationExtras);
+    if (this.authService.login(this.user.usuario, this.user.password)) {
+      let navigationExtras: NavigationExtras = {
+        state: { user: this.user }
+      };
+      this.router.navigate(['/home'], navigationExtras);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
+
 }

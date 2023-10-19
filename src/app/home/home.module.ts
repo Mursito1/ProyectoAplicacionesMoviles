@@ -16,6 +16,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+//Slider
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 //Icono Menu
 import {MatIconModule} from '@angular/material/icon';
@@ -34,7 +36,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule
   ],
   declarations: [HomePage]
 })

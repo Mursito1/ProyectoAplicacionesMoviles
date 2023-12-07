@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div class="contenedor-header">
+      <div><ion-img class="imagen-encabezado" src="../../assets/duoc_logo.png"></ion-img></div>
+      <div><button style="margin-top: 15px;" mat-icon-button color="white" [matMenuTriggerFor]="beforeMenu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      </div>
+      </div>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Perfil</button>
+        <button mat-menu-item>Asistencia</button>
+        <button mat-menu-item>Ajustes</button>
+        <button mat-menu-item>Soporte</button>
+        <button mat-menu-item>Salir</button>
+      </mat-menu>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="container-perfil">
+  <br>
+  <ion-img class="imagen-perfil" src="../../assets/profile.png"></ion-img>
+  <br>
+  <h1>Bienvenido usuario: {{ user.usuario }}</h1>
+</div>
+  <mat-card style="width: 80%; margin: auto; padding: 20px;">
+      <mat-card-header>
+        <mat-card-title style="color: black">SELECCIONE DATOS PARA ASISTENCIA</mat-card-title>
+
+
+      </mat-card-header>
+        <mat-form-field panelClass="dropdown-panel">
+          <mat-label>ASIGNATURA</mat-label>
+          <mat-select>
+            <mat-option value="0">PROGRAMACION DE APLICACIONES MOVILES</mat-option>
+            <mat-option value="1">ARQUITECTURA</mat-option>
+            <mat-option value="2">CALIDAD DE SOFTWARE</mat-option>
+            <mat-option value="2">ESTADISTICA DESCRIPTIVA</mat-option>
+            <mat-option value="3">ETICA PARA EL TRABAJO</mat-option>
+            <mat-option value="4">INGLES INTERMEDIO</mat-option>
+            <mat-option value="5">PROCESO DE PORTAFOLIO 4</mat-option>
+          </mat-select>
+         
+        </mat-form-field>
+
+        <mat-form-field panelClass="dropdown-panel">
+          <mat-label>SECCION</mat-label>
+          <mat-select>
+            <mat-option value="0">001D</mat-option>
+            <mat-option value="1">002D</mat-option>
+            <mat-option value="2">003D</mat-option>
+            <mat-option value="2">004D</mat-option>
+            <mat-option value="3">005D</mat-option>
+            <mat-option value="4">006D</mat-option>
+            <mat-option value="5">007D</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+  </mat-card>
+  <br>
+  <br>
+  <div class="slider">
+    <h1>Marcar Presente</h1>
+  </div>
+
+  <div class="slider">
+    <mat-slide-toggle></mat-slide-toggle>
+  </div>
+</ion-content> 

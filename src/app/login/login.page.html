@@ -1,23 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <ion-img class="imagen-encabezado" src="../../assets/duoc_logo.png"></ion-img>
-    </ion-title>
-    <br>
-    <ion-title>RegistrApp</ion-title>
-    <br>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  
-  <ion-content>
-    <ion-card>
-      <ion-card-header>
-        Ingreso de Usuario
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
+  <ion-header>
+    <ion-toolbar>
+      <a slot="start"><img src="../../assets/duoc_logo.png" alt="logo" class="logo"></a>
+      <ion-title slot="start" style="font-weight: bolder;">RegistrAPP</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+  <ion-img class="saludo" src="../../assets/saludo.png"></ion-img>
+  <br>
+      <ion-card class="card">
+        <ion-card-header>
+          <h2 style="color: white;">Ingreso de Usuario</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
           <ion-label position="floating">Nombre</ion-label>
           <ion-input [(ngModel)]="user.username" name="username" type="text"></ion-input>
         </ion-item>
@@ -36,7 +32,6 @@
           <ion-checkbox [(ngModel)]="rememberMe"></ion-checkbox>
         </ion-item>
       </ion-card-content>
-    </ion-card>
-  </ion-content>  
+    </ion-card> 
 
 </ion-content>

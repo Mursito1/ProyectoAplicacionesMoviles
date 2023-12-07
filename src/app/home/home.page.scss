@@ -1,3 +1,22 @@
+ion-content {
+  --background: none; /* Desactiva el fondo predeterminado de ion-content */
+  background: url('../../assets/ewallpaper.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+ion-toolbar {
+  --background: none; /* Desactiva el fondo predeterminado de ion-content */
+background-color: rgba(0, 0, 0, 0.5)
+
+}
+
+.card{
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el último valor (0.5) para cambiar la opacidad */
+  color: white;
+  text-align: center;
+}
+
+
 #container {
   text-align: center;
 
@@ -13,7 +32,7 @@
   line-height: 26px;
 }
 
-.imagen-encabezado {
+.logo {
   width: 300px;
 }
 
@@ -24,9 +43,9 @@
 }
 
 .imagen-perfil {
-  width: 200px;
-  margin: auto;
+  width: 150px;
   border-radius: 50%;
+  margin: auto;
   overflow: hidden;
 }
 

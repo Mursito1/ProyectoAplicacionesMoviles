@@ -1,34 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      <ion-img class="imagen-encabezado" src="../../assets/duoc_logo.png"></ion-img>
-    </ion-title>
-    <br>
-    <ion-title>RegistrApp</ion-title>
-    <br>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header >
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <a slot="start"><img src="../../assets/duoc_logo.png" alt="logo" class="logo"></a>
+      <ion-title slot="start" style="font-weight: bolder;">RegistrAPP</ion-title>
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
-    <ion-card>
-      <ion-card-header>
-        Ingreso de Usuario
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Correo Electrónico</ion-label>
-          <ion-input type="email" [(ngModel)]="email"></ion-input>
-        </ion-item>
-        <ion-button (click)="mostrarAlerta()">Recuperar</ion-button>
-      </ion-card-content>
-    </ion-card>
+  
+      <ion-card class="card">
+        <ion-card-header>
+          <h2 style="color: white">Recuperar Contraseña</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item >
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+          <br>
+          <ion-button (click)="mostrarAlerta()">Recuperar</ion-button>
+        </ion-card-content>
+      </ion-card>
   </ion-content>
-
-</ion-content>

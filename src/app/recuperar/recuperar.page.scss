@@ -1,5 +1,30 @@
-.imagen-encabezado {
-    width: 300px; /* Personaliza el ancho de la imagen /
-    margin: auto; / Personaliza los márgenes si es necesario /
-    / Otros estilos personalizados */
-  }
+.logo {
+  width: 300px; /* Personaliza el ancho de la imagen /
+  margin: auto; / Personaliza los márgenes si es necesario /
+  / Otros estilos personalizados */
+}
+
+ion-content {
+  --background: none; /* Desactiva el fondo predeterminado de ion-content */
+  background: url('../../assets/wallpaper.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+ion-item {
+  --background: none; /* Desactiva el fondo predeterminado de ion-content */
+  background: url('../../assets/wlabel.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+ion-toolbar {
+  --background: none; /* Desactiva el fondo predeterminado de ion-content */
+background-color: rgba(0, 0, 0, 0.5)
+
+}
+
+.card{
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el último valor (0.5) para cambiar la opacidad */
+  color: white;
+  text-align: center;
+}
+

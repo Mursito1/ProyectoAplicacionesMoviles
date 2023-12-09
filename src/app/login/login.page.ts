@@ -11,42 +11,35 @@ import { Storage } from '@ionic/storage';
 })
 export class LoginPage {
   user = {
-    email: "",         
-    password: "",
-    username: "",     
+    username: "",         
+    email: "",
+    password: "",     
   };
   rememberMe!: boolean;
 
-  constructor(private router: Router, private authService: AuthService, public api: AuthService, private storage: Storage, private ngZone: NgZone, private auth: GuardiaGuard) {
+  constructor(private router: Router, public api: AuthService, private storage: Storage, private ngZone: NgZone, private auth: GuardiaGuard) {
     this.initStorage();
   }
 
   async initStorage() {
-    // Crear la base de datos de almacenamiento
     this.storage = await this.storage['create']();
-
-    console.log('Storage está listo');
-
-    // Puedes realizar operaciones de almacenamiento aquí
   }
  
   login() {
     this.api.getUsuarios().subscribe(
       (usuarios) => {
-        // Resto del código...
 
         if (usuarios && usuarios.length > 0) {
+          const username = this.user.username.toLowerCase();
           const email = this.user.email.toLowerCase();
           const password = this.user.password.toLowerCase();
-          const username = this.user.username.toLowerCase();
 
-          const usuario = usuarios.find((usuario) => usuario.email.toLowerCase() === usuario || usuario.username.toLowerCase() === username);
+          const usuario = usuarios.find((usuario) => usuario.username.toLowerCase() === username || usuario.email.toLowerCase() === email);
 
           if (usuario && usuario.password.toLowerCase() === password) {
             console.log('Autenticación exitosa');
             this.auth.setAuthenticationStatus(true);
 
-            // Utiliza this.user.Gmail para obtener el correo electrónico del usuario
             const correoUsuario = this.user.email;
 
             // Lógica de redirección basada en el correo electrónico
@@ -55,13 +48,13 @@ export class LoginPage {
             let navigationExtras: NavigationExtras = {
               state: {
                 user: this.user,
-                alumno: usuario
+                usuario: usuario
               }
             };   
             // Mover la lógica de almacenamiento aquí, después de la autenticación exitosa
             if (this.rememberMe) {
               localStorage.setItem('credentials',  this.user.email);
-              localStorage.setItem('nombre',  this.user.username);
+              localStorage.setItem('username',  this.user.username);
               console.log('Credenciales guardadas en localStorage');
             } else {
               // Si no está marcado, elimina las credenciales almacenadas

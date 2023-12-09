@@ -1,28 +1,30 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/autenticacion.service';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AnimationController } from '@ionic/angular';
+import { IonModal } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { Animation } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-homeprof',
   templateUrl: './homeprof.page.html',
   styleUrls: ['./homeprof.page.scss'],
 })
 export class HomeprofPage {
-  state: any;
-  user: any;
-  constructor(private activeroute: ActivatedRoute, private router: Router, private authService: AuthService) {
-    this.activeroute.queryParams.subscribe(params => {
-      this.state = this.router.getCurrentNavigation()?.extras.state;
-      this.user = this.state.user;
+  email = localStorage.getItem('credentials') || '';
+  username = localStorage.getItem('username') || '';
 
-      if (!this.authService.isAuthenticated) {
-        this.router.navigate(['/login']);
-      }
-    });
+  constructor(private router: Router) {} 
+
+  redirectToMostrarQR() {
+    console.log('Redirigiendo a mostrarqr');
+    this.router.navigate(['/mostrarqr']);
   }
+
   cerrarsesion() {
     this.router.navigate(['/login']);
   }
-  generarqr() {
-    this.router.navigate(['/mostrarqr']);
-  }
+
+
 }

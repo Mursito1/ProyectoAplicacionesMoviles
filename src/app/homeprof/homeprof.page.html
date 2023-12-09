@@ -14,16 +14,16 @@
   
     <ion-card class="card">
     <br>
-    <h1 style="font-weight: bold;">Bienvenido profesor/a {{ user.usuario }}</h1>
+    <h1 style="font-weight: bold;">Bienvenido profesor/a </h1>
     <br>
     <ion-img class="imagen-perfil" src="../../assets/profile.png"></ion-img>
     <br>
-    <h1>Seccion: </h1>
+    <h1>Bienvenido: {{ username }}</h1>
     <br>
     <br>
       <div><p>REGISTRAR ASISTENCIA</p></div>
       <div><ion-icon name="chevron-down-outline"></ion-icon></div>
-    <div><ion-button color="warning" (click)="generarqr()">
+    <div><ion-button type="submit" color="warning" (click)="redirectToMostrarQR()">
          GENERAR QR
       <ion-icon name="qr-code-outline" slot="start"></ion-icon>   
     </ion-button>

@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'homeprof',
-    loadChildren: () => import('./homeprof/homeprof.module').then( m => m.HomeprofPageModule)
+    loadChildren: () => import('./homeprof/homeprof.module').then( m => m.HomeprofPageModule),
+    canActivate: [GuardiaGuard]
   },
   {
     path: '',
@@ -32,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'mostrarqr',
-    loadChildren: () => import('./mostrarqr/mostrarqr.module').then( m => m.MostrarqrPageModule)
+    loadChildren: () => import('./mostrarqr/mostrarqr.module').then( m => m.MostrarqrPageModule),
+    canActivate: [GuardiaGuard]
   }
 
 

@@ -6,7 +6,6 @@
     </ion-toolbar>
   </ion-header>
   <br>
-  <ion-img class="saludo" src="../../assets/saludo.png"></ion-img>
   <br>
       <ion-card class="card">
         <ion-card-header>
@@ -14,22 +13,18 @@
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input [(ngModel)]="user.username" name="username" type="text"></ion-input>
+          <ion-input position="floating" [(ngModel)]="user.username" name="username" type="text">Nombre</ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input [(ngModel)]="user.email" name="email"></ion-input>
+          <ion-input position="floating"[(ngModel)]="user.email" name="email">Email</ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input [(ngModel)]="user.password" name="password" type="password"></ion-input>
+          <ion-input position="floating" [(ngModel)]="user.password" name="password" type="password">Contraseña</ion-input>
         </ion-item>
-        <ion-button type="button" expand="full"  (click)="login()">Iniciar Sesión</ion-button>
-        <ion-button type="submit" expand="full"  [routerLink]="['/recuperar']">Olvidaste tu contraseña?</ion-button>
+        <ion-button type="button" expand="full" (click)="login()">Iniciar Sesión</ion-button>
+        <ion-button type="submit" expand="full" [routerLink]="['/recuperar']">Olvidaste tu contraseña?</ion-button>
         <ion-item>
-          <ion-label>Recordar</ion-label>
-          <ion-checkbox [(ngModel)]="rememberMe"></ion-checkbox>
+          <ion-checkbox [(ngModel)]="rememberMe">Recordar</ion-checkbox>
         </ion-item>
       </ion-card-content>
     </ion-card> 

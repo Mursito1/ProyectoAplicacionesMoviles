@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>mostrarqr</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">mostrarqr</ion-title>
+      <ion-title>
+        <div class="contenedor-header">
+        <div><ion-img class="imagen-encabezado" src="../../assets/duoc_logo.png"></ion-img></div>
+        <div> <br><ion-button color="danger" style="margin-left: 20px;" size="small" (click)="cerrarsesion()">Cerrar Sesion</ion-button></div></div>
+   
+  
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-img src="../../assets/frame.png"></ion-img>
+  </ion-card>
 </ion-content>

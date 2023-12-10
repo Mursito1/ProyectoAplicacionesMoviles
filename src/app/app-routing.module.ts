@@ -27,15 +27,17 @@ const routes: Routes = [
     path: 'recuperar',
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
-  {
-    path: '**',
-    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
-  },
+  
   {
     path: 'mostrarqr',
     loadChildren: () => import('./mostrarqr/mostrarqr.module').then( m => m.MostrarqrPageModule),
     canActivate: [GuardiaGuard]
-  }
+  },
+
+  {
+    path: '**',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
 
 
   

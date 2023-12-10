@@ -19,10 +19,6 @@ export class HomePage {
 
   constructor(private router: Router) {}  // Inject Router into the component
 
-  public async ccc(): Promise<void> {
-    await BarcodeScanner.installGoogleBarcodeScannerModule();
-  }
-
   cerrarsesion() {
     this.router.navigate(['/login']);
   }

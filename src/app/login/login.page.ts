@@ -43,7 +43,7 @@ export class LoginPage {
             const correoUsuario = this.user.email;
 
             // Lógica de redirección basada en el correo electrónico
-            this.redirigirSegunCorreo(correoUsuario);
+            this.redirectCorreo(correoUsuario);
 
             let navigationExtras: NavigationExtras = {
               state: {
@@ -84,7 +84,7 @@ export class LoginPage {
   }
 
   // Método para redirigir según el correo electrónico
-  private redirigirSegunCorreo(correo: string) {
+  private redirectCorreo(correo: string) {
     // Obtener la parte del dominio del correo electrónico
     const dominio = correo.split('@')[1];
 

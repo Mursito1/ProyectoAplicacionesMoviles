@@ -20,7 +20,7 @@ export class GuardiaGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (this.isAuthenticated) {
-        return true; // Usuario autenticado, permitir el acceso.
+        return true;
       } else {
         return this.router.navigate(['/login']);
       }

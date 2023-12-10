@@ -4,19 +4,21 @@ import { GuardiaGuard } from './guardia.guard';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     canActivate: [GuardiaGuard]
   },
+
   {
     path: 'homeprof',
     loadChildren: () => import('./homeprof/homeprof.module').then( m => m.HomeprofPageModule),
     canActivate: [GuardiaGuard]
-  },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
   },
   
   {

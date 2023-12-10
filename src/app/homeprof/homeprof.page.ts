@@ -26,5 +26,4 @@ export class HomeprofPage {
     this.router.navigate(['/login']);
   }
 
-
 }

@@ -22,7 +22,7 @@ export class LoginPage {
   }
 
   async initStorage() {
-    this.storage = await this.storage['create']();
+    this.storage = await this.storage.create();
   }
  
   login() {
@@ -30,19 +30,20 @@ export class LoginPage {
       (usuarios) => {
 
         if (usuarios && usuarios.length > 0) {
-          const username = this.user.username.toLowerCase();
-          const email = this.user.email.toLowerCase();
-          const password = this.user.password.toLowerCase();
+          const username = this.user.username;
+          const email = this.user.email;
+          const password = this.user.password;
 
-          const usuario = usuarios.find((usuario) => usuario.username.toLowerCase() === username || usuario.email.toLowerCase() === email);
+          const usuario = usuarios.find((usuario) => usuario.username === username || usuario.email === email);
 
-          if (usuario && usuario.password.toLowerCase() === password) {
+          localStorage.setItem('username', this.user.username);
+          
+          if (usuario && usuario.password === password) {
             console.log('Autenticación exitosa');
             this.auth.setAuthenticationStatus(true);
 
             const correoUsuario = this.user.email;
 
-            // Lógica de redirección basada en el correo electrónico
             this.redirectCorreo(correoUsuario);
 
             let navigationExtras: NavigationExtras = {
@@ -51,46 +52,36 @@ export class LoginPage {
                 usuario: usuario
               }
             };   
-            // Mover la lógica de almacenamiento aquí, después de la autenticación exitosa
             if (this.rememberMe) {
               localStorage.setItem('credentials',  this.user.email);
               localStorage.setItem('username',  this.user.username);
-              console.log('Credenciales guardadas en localStorage');
             } else {
-              // Si no está marcado, elimina las credenciales almacenadas
               localStorage.removeItem('credentials');
-              console.log('Credenciales eliminadas de localStorage');
             }
           } else {
-            console.log('Autenticación fallida: Credenciales incorrectas');
+            console.log('Autenticación fallida');
             this.router.navigate(['/login']);
           }
         } else {
-          console.error('La respuesta de la API es un array vacío o nulo');
+          console.error('Autenticación fallida');
           this.router.navigate(['/login']);
         }
       },
       (error) => {
-        console.error('Error al obtener datos de la API', error);
         if (error.status === 401) {
-          console.log('Error de autenticación: Credenciales incorrectas');
+          console.log('Autenticación fallida');
           this.router.navigate(['/login']);
         } else {
-          console.error('Otro tipo de error:', error);
+          console.error('Autenticación fallida', error);
           this.router.navigate(['/login']);
         }
       }
     );
   }
 
-  // Método para redirigir según el correo electrónico
   private redirectCorreo(correo: string) {
-    // Obtener la parte del dominio del correo electrónico
     const dominio = correo.split('@')[1];
-
-    // Lógica de redirección basada en la parte del dominio
-    if (dominio === 'duoc.cl') {
-      // Redirigir a una página específica para correos con dominio "duoc.cl"
+    if (dominio === 'alumno.cl') {
       this.router.navigate(['/home']);
     }
     else if(dominio==='profesor.cl'){

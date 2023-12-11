@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // Import Router from '@angular/router'
+import { Router } from '@angular/router';
 import { AnimationController } from '@ionic/angular';
 import { IonModal } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
@@ -17,7 +17,7 @@ export class HomePage {
   email = localStorage.getItem('credentials') || '';
   username = localStorage.getItem('username') || '';
 
-  constructor(private router: Router) {}  // Inject Router into the component
+  constructor(private router: Router) {} 
 
   cerrarsesion() {
     this.router.navigate(['/login']);

@@ -14,7 +14,6 @@ export class AuthService {
   }
 
   async init() {
-    //await this.storage.create();
   }
 
   getUsuarios(): Observable<any[]> {

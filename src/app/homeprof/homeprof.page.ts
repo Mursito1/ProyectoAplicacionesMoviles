@@ -12,8 +12,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./homeprof.page.scss'],
 })
 export class HomeprofPage {
-  email = localStorage.getItem('credentials') || '';
-  username = localStorage.getItem('username') || '';
+  username = localStorage.getItem('username');
 
   constructor(private router: Router) {} 
 

@@ -12,19 +12,24 @@
           <h2 style="color: white;">Ingreso de Usuario</h2>
         </ion-card-header>
         <ion-card-content>
-          <ion-item>
-          <ion-input position="floating" [(ngModel)]="user.username" name="username" type="text">Nombre</ion-input>
-        </ion-item>
+   
+          <ion-input label="Nombre de usuario" label-placement="floating" fill="outline" [(ngModel)]="user.username" name="username" type="text"></ion-input>
+      
+        <br>
+       
+          <ion-input label="Correo electrónico" label-placement="floating" fill="outline" [(ngModel)]="user.email" name="email"></ion-input>
+       
+        <br>
+        
+          <ion-input label="Contraseña" label-placement="floating" fill="outline" [(ngModel)]="user.password" name="password" type="password"></ion-input>
+        
+        <br>
+        <ion-button type="button"  (click)="login()" slot="start">Iniciar Sesión</ion-button>
+        <ion-label type="submit"  [routerLink]="['/recuperar']" slot="end" style="color: cornflowerblue;">  ¿Olvidaste tu contraseña?</ion-label>
+        
         <ion-item>
-          <ion-input position="floating"[(ngModel)]="user.email" name="email">Email</ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input position="floating" [(ngModel)]="user.password" name="password" type="password">Contraseña</ion-input>
-        </ion-item>
-        <ion-button type="button" expand="full" (click)="login()">Iniciar Sesión</ion-button>
-        <ion-button type="submit" expand="full" [routerLink]="['/recuperar']">Olvidaste tu contraseña?</ion-button>
-        <ion-item>
-          <ion-checkbox [(ngModel)]="rememberMe">Recordar</ion-checkbox>
+          <ion-checkbox [(ngModel)]="rememberMe" slot="start"></ion-checkbox>
+          <ion-label>Recordar</ion-label>
         </ion-item>
       </ion-card-content>
     </ion-card> 

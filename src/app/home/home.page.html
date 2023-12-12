@@ -4,7 +4,7 @@
       <ion-title>
         <div class="contenedor-header">
         <div><ion-img class="imagen-encabezado" src="../../assets/duoc_logo.png"></ion-img></div>
-        <div> <br><ion-button color="danger" style="margin-left: 20px;" size="small" (click)="cerrarsesion()">Cerrar Sesion</ion-button></div></div>
+        <div> <br><ion-button color="danger" style="margin-left: 20px;" size="large" (click)="cerrarsesion()"><ion-icon name="exit-outline"></ion-icon></ion-button></div></div>
    
   
       </ion-title>
@@ -23,7 +23,7 @@
     <br>
       <div><p>MARCAR ASISTENCIA</p></div>
       <div><ion-icon name="chevron-down-outline"></ion-icon></div>
-    <div><ion-button color="warning" >
+    <div><ion-button color="warning" (click)="scanQRCode()" size="large">
       <ion-icon slot="icon-only" name="camera-outline" size="large"></ion-icon>
     </ion-button>
   </div>

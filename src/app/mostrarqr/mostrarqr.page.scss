@@ -1,0 +1,80 @@
+ion-content {
+    --background: none; /* Desactiva el fondo predeterminado de ion-content */
+    background: url('../../assets/pwallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+  }
+  
+  ion-toolbar {
+    --background: none; /* Desactiva el fondo predeterminado de ion-content */
+  background-color: rgba(0, 0, 0, 0.5)
+  
+  }
+  
+  .card{
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el último valor (0.5) para cambiar la opacidad */
+    color: white;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+  }
+  
+  
+  #container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .logo {
+    width: 300px;
+  }
+  
+  .container-perfil { /* Ancho del contenedor */
+    margin: auto; /* Margen automÃ¡tico a la izquierda y la derecha para centrar horizontalmente */
+    text-align: center;
+    
+  }
+  
+  .imagen-perfil {
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  .contenedor-header{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }

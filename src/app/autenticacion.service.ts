@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://nzxzgbtk-8000.brs.devtunnels.ms/api';
+  private apiUrl = 'https://1n5fx13b-8000.brs.devtunnels.ms/api';
 
   constructor(private http: HttpClient) {
     this.init();
